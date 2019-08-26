@@ -2,8 +2,7 @@
 
 int main(void)
 {
-
-  RCC_AHB3PeriphResetCmd(RCC_APB1Periph_SPI2, ENABLE);
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
   GPIO_InitTypeDef GPIO_InitStruct;
 
   GPIO_InitStruct.GPIO_Pin  = GPIO_Pin_5;
@@ -15,7 +14,7 @@ int main(void)
 
  GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+//GPIO_ResetBits(GPIOA, GPIO_Pin_5);
 
 
   while(1)
